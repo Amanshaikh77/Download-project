@@ -10,7 +10,14 @@ export default {
       });
     }
 
-    return new Response("Download Project Worker", {
+    if (url.pathname === "/api/projects") {
+      return Response.json({
+        success: true,
+        projects: []
+      });
+    }
+
+    return new Response("Download Project Worker is running", {
       status: 200,
       headers: {
         "Content-Type": "text/plain; charset=UTF-8"
