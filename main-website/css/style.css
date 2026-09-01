@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #d1d5db;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.hero {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.hero h2 {
+    margin-bottom: 8px;
+}
+
+.project-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.project-card h3 {
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.release-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.download-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .hero,
+    .project-card {
+        padding: 18px;
+    }
+
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "project-1",
+    "name": "My First Project",
+    "version": "1.0",
+    "releaseDate": "01 September 2026",
+    "fileSize": "100 MB",
+    "description": "This is my first project release.",
+    "downloadPage": "#"
+  }
+]
