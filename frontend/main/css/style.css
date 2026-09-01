@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #d1d5db;
+}
+
+main {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px 15px 50px;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+#current-project-container,
+#archive-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.project-card h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  margin-bottom: 7px;
+}
+
+.project-description {
+  margin: 15px 0;
+}
+
+.project-meta {
+  color: #555;
+  font-size: 14px;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 11px 18px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+.download-button:hover {
+  background: #1d4ed8;
+}
+
+.archive-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  background: #111827;
+  color: #d1d5db;
+  padding: 25px 15px;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 30px 15px;
+  }
+
+  header h1 {
+    font-size: 27px;
+  }
+
+  main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
