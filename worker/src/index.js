@@ -3,7 +3,7 @@ function json(data, status = 200) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/health") {
@@ -18,8 +18,14 @@ export default {
       try {
         const result = await env.DB
           .prepare(`
-            SELECT id, name, description, version,
-                   file_size, drive_file_id, created_at
+            SELECT
+              id,
+              name,
+              description,
+              version,
+              file_size,
+              drive_file_id,
+              created_at
             FROM projects
             ORDER BY datetime(created_at) DESC
           `)
@@ -94,16 +100,7 @@ export default {
 
         return json({
           success: true,
-          message: "Project published successfully",
-          project: {
-            id,
-            name,
-            description,
-            version,
-            file_size,
-            drive_file_id,
-            created_at: createdAt
-          }
+          message: "Project published successfully"
         });
       } catch (error) {
         return json({
@@ -113,11 +110,6 @@ export default {
       }
     }
 
-    return new Response("Download Project Worker is running", {
-      status: 200,
-      headers: {
-        "Content-Type": "text/plain; charset=UTF-8"
-      }
-    });
+    return env.ASSETS.fetch(request);
   }
 };
