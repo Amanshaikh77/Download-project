@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Download Project</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+  <main class="admin-container">
+
+    <h1>Admin Panel</h1>
+    <p>Publish a new project</p>
+
+    <form id="publish-form">
+
+      <label>Admin Secret</label>
+      <input type="password" id="admin-secret" required>
+
+      <label>Project ID</label>
+      <input type="text" id="project-id" placeholder="project-001" required>
+
+      <label>Project Name</label>
+      <input type="text" id="project-name" required>
+
+      <label>Description</label>
+      <textarea id="description" required></textarea>
+
+      <label>Version</label>
+      <input type="text" id="version" placeholder="1.0" required>
+
+      <label>File Size</label>
+      <input type="text" id="file-size" placeholder="85 MB" required>
+
+      <label>Google Drive File ID</label>
+      <input type="text" id="drive-file-id" required>
+
+      <button type="submit">Publish Project</button>
+
+    </form>
+
+    <div id="message"></div>
+
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
