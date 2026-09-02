@@ -11,10 +11,35 @@ export default {
     }
 
     if (url.pathname === "/api/projects") {
-      return Response.json({
-        success: true,
-        projects: []
-      });
+      try {
+        const result = await env.DB
+          .prepare(`
+            SELECT
+              id,
+              name,
+              description,
+              version,
+              file_size,
+              drive_file_id,
+              created_at
+            FROM projects
+            ORDER BY datetime(created_at) DESC
+          `)
+          .all();
+
+        return Response.json({
+          success: true,
+          projects: result.results || []
+        });
+      } catch (error) {
+        return Response.json(
+          {
+            success: false,
+            error: "Database query failed"
+          },
+          { status: 500 }
+        );
+      }
     }
 
     return new Response("Download Project Worker is running", {

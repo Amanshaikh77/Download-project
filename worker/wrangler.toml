@@ -4,3 +4,8 @@ compatibility_date = "2026-09-01"
 
 [assets]
 directory = "../frontend"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "download-project-db"
+database_id = "cbb5bd6b-fc10-4b4a-9540-6892eb9d891b"
