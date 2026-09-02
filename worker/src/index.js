@@ -3,7 +3,7 @@ function json(data, status = 200) {
 }
 
 export default {
-  async fetch(request, env, ctx) {
+  async fetch(request, env) {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/health") {
@@ -18,14 +18,8 @@ export default {
       try {
         const result = await env.DB
           .prepare(`
-            SELECT
-              id,
-              name,
-              description,
-              version,
-              file_size,
-              drive_file_id,
-              created_at
+            SELECT id, name, description, version,
+                   file_size, drive_file_id, created_at
             FROM projects
             ORDER BY datetime(created_at) DESC
           `)
